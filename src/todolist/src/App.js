@@ -21,7 +21,14 @@ function App() {
       <div className="heading">
         <h1>ToDo-List</h1>
         <InputText addItem={addItem} />
-        <ToDoItem />
+        <div>
+          {
+            items.map((todoitems,index) =>{
+              return <ToDoItem key={index} todoitems={todoitems} />
+            })
+          }
+        </div>
+        {/* <ToDoItem /> */}
        
       </div>
     </div>

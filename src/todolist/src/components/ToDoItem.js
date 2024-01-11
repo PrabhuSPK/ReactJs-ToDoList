@@ -1,10 +1,10 @@
 import React from 'react'
 
-const ToDoItem = () => {
+const ToDoItem = (props) => {
   return (
     <div>
         <ul>
-            <li>item 1</li>
+            <li>{props.todoitems}</li>
         </ul>
     </div>
   )

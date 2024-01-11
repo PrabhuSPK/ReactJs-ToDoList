@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 const InputText = (props) => {
-    const [InputText, secondValue] = useState("first")
+    const [InputText, secondValue] = useState("")
 
     // const prints = () => {
     //     secondValue("second")
@@ -22,7 +22,7 @@ const InputText = (props) => {
             >
                 <span>Add</span>
                 </button>
-            <p>{InputText}</p>
+            {/* <p>{InputText}</p> */}
         </div >
     )
 }
