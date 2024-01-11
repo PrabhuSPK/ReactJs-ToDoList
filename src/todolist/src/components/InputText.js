@@ -1,23 +1,30 @@
-import React,{ useState } from 'react'
+import React, { useState } from 'react'
 
-const InputText = () => {
-    const [setText,secondValue] = useState("first")
+const InputText = (props) => {
+    const [InputText, secondValue] = useState("first")
 
-    const prints = () => {
-        secondValue("second")
-    }
+    // const prints = () => {
+    //     secondValue("second")
+    // }
 
     const handleChange = (event) => {
         const newVar = event.target.value;
         secondValue(newVar)
     }
-  return (
-    <div className='inputtext'>
-        <input type="text" onChange={handleChange} />
-        <button type="submit" onClick={prints}>Add</button>
-        <p>{setText}</p>
-    </div>
-  )
+    return (
+        <div className="form">
+            <input type="text" onChange={handleChange} value={InputText} />
+            <button 
+            onClick={() => {
+            props.addItem(InputText); 
+            secondValue(""); 
+            }}
+            >
+                <span>Add</span>
+                </button>
+            <p>{InputText}</p>
+        </div >
+    )
 }
 
 export default InputText
