@@ -14,6 +14,13 @@ function App() {
     } )
   }
 
+  function deleteItem(id){
+    setItems((previousItems) =>{
+      return previousItems.filter((item,index)=>{
+        return index!==id;
+      })
+    })
+  }
   console.log(items)
 
   return (
@@ -24,7 +31,7 @@ function App() {
         <div>
           {
             items.map((todoitems,index) =>{
-              return <ToDoItem key={index} todoitems={todoitems} />
+              return <ToDoItem key={index} todoitems={todoitems} id={index} deleteItem={deleteItem} />
             })
           }
         </div>
